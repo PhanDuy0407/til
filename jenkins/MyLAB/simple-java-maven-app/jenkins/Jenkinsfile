@@ -25,9 +25,8 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                dir('jenkins/MyLAB/simple-java-maven-app') {
-                    sh './jenkins/scripts/deliver.sh'
-                }
+                sh 'chmod +x jenkins/MyLAB/simple-java-maven-app/jenkins/scripts/deliver.sh'
+                sh 'jenkins/MyLAB/simple-java-maven-app/jenkins/scripts/deliver.sh'
             }
         }
     }
