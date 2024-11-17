@@ -1,6 +1,3 @@
 [submodule "jenkins/Jenkins-Course"]
 	path = jenkins/Jenkins-Course
 	url = https://github.com/addamstj/Jenkins-Course
-[submodule "jenkins/simple-java-maven-app"]
-	path = jenkins/simple-java-maven-app
-	url = https://github.com/jenkins-docs/simple-java-maven-app.git
