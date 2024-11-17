@@ -5,27 +5,27 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-            dir('jenkins/MyLAB/simple-java-maven-app') {
-                steps {
+            steps {
+                dir('jenkins/MyLAB/simple-java-maven-app') {
                     sh 'mvn -B -DskipTests clean package'
                 }
             }
         }
         stage('Test') {
-            dir('jenkins/MyLAB/simple-java-maven-app') {
-                steps {
+            steps {
+                dir('jenkins/MyLAB/simple-java-maven-app') {
                     sh 'mvn test'
                 }
-                post {
-                    always {
-                        junit 'target/surefire-reports/*.xml'
-                    }
+            }
+            post {
+                always {
+                    junit 'jenkins/MyLAB/simple-java-maven-app/target/surefire-reports/*.xml'
                 }
             }
         }
         stage('Deliver') {
-            dir('jenkins/MyLAB/simple-java-maven-app') {
-                steps {
+            steps {
+                dir('jenkins/MyLAB/simple-java-maven-app') {
                     sh './jenkins/scripts/deliver.sh'
                 }
             }
